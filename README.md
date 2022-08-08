@@ -1,6 +1,5 @@
-# milestone
-
-A new Flutter project.
+# Tugas Milestone Kelompok 2 (JUS)
+Membuat sebuah aplikasi pencari teman menggunakan Flutter dan Firebase.
 
 ## Getting Started
 
