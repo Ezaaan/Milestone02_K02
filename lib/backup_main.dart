@@ -1,0 +1,47 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:milestone/responsive/mobileScreenLayout.dart';
+import 'package:milestone/responsive/responsive_layouts.dart';
+import 'package:milestone/responsive/webScreenLayout.dart';
+import 'package:milestone/screens/login_screen.dart';
+import 'package:milestone/utils/colors.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: "AIzaSyCXzOJ9sZDDZ_rSiXvaXSuVzHH6YLHMW3Y",
+        appId: "1:601197916139:web:5fd81bf96b9c74826eb3ae",
+        messagingSenderId: "601197916139",
+        projectId: "aplikasi-pencari-teman",
+        storageBucket: "aplikasi-pencari-teman.appspot.com",
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Pencari Teman',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: mobileBackgroundColor,
+      ),
+      // home: const ResponsiveLayout(
+      //   mobileScreenLayout: MobileScreenLayout(),
+      //   webScreenLayout: WebScreenLayout(),
+      // ),
+      home: LoginScreen(),
+    );
+  }
+}

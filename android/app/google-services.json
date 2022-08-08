@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "601197916139",
+    "project_id": "aplikasi-pencari-teman",
+    "storage_bucket": "aplikasi-pencari-teman.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601197916139:android:f8ddf3d324f7e8646eb3ae",
+        "android_client_info": {
+          "package_name": "com.example.milestone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601197916139-45pl0bg8sjp9a4n3r4n1s1pqqd28895a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUwSJzcgq80WMSICHyCATLBACJtk66b8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601197916139-45pl0bg8sjp9a4n3r4n1s1pqqd28895a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
