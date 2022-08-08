@@ -21,6 +21,10 @@ class TextFieldInput extends StatelessWidget {
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.bold,
+        ),
         border: inputBorder,
         focusedBorder: inputBorder,
         enabledBorder: inputBorder,
