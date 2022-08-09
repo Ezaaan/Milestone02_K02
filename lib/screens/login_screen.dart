@@ -18,7 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final Color ColorFont1 = Colors.grey.withOpacity(0.5);
   String Font1 = "Montserrat";
-  bool isPressed = false;
+  bool isForgotPressed = false;
+  bool isSignupPressed = false;
 
   @override
   void dispose() {
@@ -55,12 +56,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   Colors.black.withOpacity(0.9),
                 ],
               )),
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 30),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 32), //, vertical: 50),
               width: double.infinity,
               child: SingleChildScrollView(
                   child: Container(
-                padding: MediaQuery.of(context).padding,
-                height: height3,
+                //padding: MediaQuery.of(context).padding,
+                height: height2,
                 // height: MediaQuery.of(context).size.height -
                 //     MediaQuery.of(context).padding.top -
                 //     kToolbarHeight -
@@ -155,22 +157,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     GestureDetector(
                       onTapUp: (details) {
-                        setState(() => isPressed = true);
+                        setState(() => isForgotPressed = !isForgotPressed);
                       },
                       onTapDown: (details) {
-                        setState(() => isPressed = false);
+                        setState(() => isForgotPressed = !isForgotPressed);
                       },
                       child: RichText(
                         text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTapUp = () => print(isPressed),
                           text: "Forgot Password",
                           style: TextStyle(
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.bold,
-                            color: isPressed
-                                ? Colors.grey.withOpacity(0.5)
-                                : Colors.white.withOpacity(0.5),
+                            color: isForgotPressed
+                                ? Colors.white.withOpacity(0.5)
+                                : Colors.grey.withOpacity(0.5),
                           ),
                         ),
                       ),
@@ -228,33 +228,47 @@ class _LoginScreenState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          //Icon google
-                          alignment: Alignment.center,
-                          height: 120,
-                          width: 100,
-                          child: SvgPicture.asset(
-                            "assets/icons/google_logo.svg",
-                            height: 60,
-                          ),
-                        ),
+                            //Icon google
+                            alignment: Alignment.center,
+                            height: 120,
+                            width: 100,
+                            child: GestureDetector(
+                              onTap: () {
+                                print("GOOGLE"); //Nanti bawa ke sign in google
+                              },
+                              child: SvgPicture.asset(
+                                "assets/icons/google_logo.svg",
+                                height: 60,
+                              ),
+                            )),
                         Container(
-                          //Icon Fb
-                          alignment: Alignment.center,
-                          height: 100,
-                          width: 100,
-                          child: SvgPicture.asset(
-                            "assets/icons/fb_logo.svg",
-                            height: 75,
-                          ),
-                        ),
+                            //Icon Fb
+                            alignment: Alignment.center,
+                            height: 100,
+                            width: 100,
+                            child: GestureDetector(
+                              onTap: () {
+                                print(
+                                    "FACEBOOK"); //Nanti bawa ke sign in facebook
+                              },
+                              child: SvgPicture.asset(
+                                "assets/icons/fb_logo.svg",
+                                height: 75,
+                              ),
+                            )),
                         Container(
                           //Icon apple
                           alignment: Alignment.center,
                           height: 100,
                           width: 100,
-                          child: SvgPicture.asset(
-                            "assets/icons/apple_logo.svg",
-                            height: 70,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("APPLE"); //Nanti bawa ke sign in apple
+                            },
+                            child: SvgPicture.asset(
+                              "assets/icons/apple_logo.svg",
+                              height: 70,
+                            ),
                           ),
                         )
                       ],
@@ -264,22 +278,55 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 10,
                     ),
 
-                    RichText(
-                      textAlign: TextAlign.end,
-                      text: TextSpan(
-                          text: "Don't have an account? ",
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account? ",
                           style: TextStyle(
                               fontFamily: Font1,
-                              color: ColorFont1,
-                              fontWeight: FontWeight.bold),
-                          children: const <TextSpan>[
-                            TextSpan(
-                              text: "Sign Up",
-                              style: TextStyle(
-                                  fontFamily: "Montserrat",
-                                  color: Color.fromARGB(255, 255, 219, 32)),
-                            )
-                          ]),
+                              fontWeight: FontWeight.bold,
+                              color: ColorFont1),
+                        ),
+                        GestureDetector(
+                          onTapUp: ((details) {
+                            setState(() => isSignupPressed = !isSignupPressed);
+                          }),
+                          onTapDown: ((details) {
+                            setState(() => isSignupPressed = !isSignupPressed);
+                          }),
+                          child: Text(
+                            "Sign Up",
+                            style: TextStyle(
+                                fontFamily: Font1,
+                                fontWeight: FontWeight.bold,
+                                color: isSignupPressed
+                                    ? Color.fromARGB(255, 214, 182, 21)
+                                    : Color.fromARGB(255, 255, 219, 32)),
+                          ),
+                        )
+                      ],
+                    ),
+                    // RichText(
+                    //   textAlign: TextAlign.end,
+                    //   text: TextSpan(
+                    //       text: "Don't have an account? ",
+                    //       style: TextStyle(
+                    //           fontFamily: Font1,
+                    //           color: ColorFont1,
+                    //           fontWeight: FontWeight.bold),
+                    //       children: const <TextSpan>[
+                    //         TextSpan(
+                    //           text: "Sign Up",
+                    //           style: TextStyle(
+                    //               fontFamily: "Montserrat",
+                    //               color: Color.fromARGB(255, 255, 219, 32)),
+                    //         )
+                    //       ]),
+                    // ),
+                    SizedBox(
+                      height: 20,
                     )
                   ],
                 ),
