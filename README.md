@@ -1,5 +1,5 @@
 # Tugas Milestone Kelompok 2 (JUS)
-Membuat sebuah aplikasi pencari teman menggunakan Flutter dan Firebase.
+Membuat sebuah aplikasi pencari sahabat menggunakan Flutter dan Firebase.
 
 ## Getting Started
 
