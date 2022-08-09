@@ -64,7 +64,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/logo_itb.svg
+    - assets/icons/google_logo.svg
+    - assets/icons/fb_logo.svg
+    - assets/icons/apple_logo.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -81,11 +83,18 @@ flutter:
   fonts:
     - family: Montserrat
       fonts:
-        - asset: assets/fonts/Montserrat/MontserratAlternates-Regular.otf
-        - asset: assets/fonts/Montserrat/MontserratAlternates-Italic.otf
+        - asset: assets/fonts/Montserrat/Montserrat-Regular.otf
+        - asset: assets/fonts/Montserrat/Montserrat-Italic.otf
           style: italic
-        - asset: assets/fonts/Montserrat/MontserratAlternates-Bold.otf
-          style: bold
+        - asset: assets/fonts/Montserrat/Montserrat-Bold.otf
+          weight: 700
+    - family: Montserrat_Alt
+      fonts:
+        - asset: assets/fonts/Montserrat_alt/MontserratAlternates-Regular.otf
+        - asset: assets/fonts/Montserrat_alt/MontserratAlternates-Italic.otf
+          style: italic
+        - asset: assets/fonts/Montserrat_alt/MontserratAlternates-Bold.otf
+          weight: 700
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

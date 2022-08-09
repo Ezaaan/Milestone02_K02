@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class TextFieldInput extends StatelessWidget {
@@ -15,21 +17,25 @@ class TextFieldInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inputBorder =
-        UnderlineInputBorder(); //(borderSide: Divider.createBorderSide(context));
-    return TextField(
+    final inputBorder = UnderlineInputBorder(
+        borderSide: BorderSide(
+            color: Colors.grey.withOpacity(
+                0.5))); //(borderSide: Divider.createBorderSide(context));
+    return TextFormField(
+      style: TextStyle(
+          fontFamily: "Montserrat", color: Colors.grey.withOpacity(0.5)),
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(
-          fontFamily: 'Montserrat',
-          fontWeight: FontWeight.bold,
-        ),
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+            color: Colors.grey.withOpacity(0.5)),
         border: inputBorder,
         focusedBorder: inputBorder,
         enabledBorder: inputBorder,
         //filled: true,
-        contentPadding: const EdgeInsets.all(15),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 5),
       ),
       keyboardType: textInputType,
       obscureText: isPass,
