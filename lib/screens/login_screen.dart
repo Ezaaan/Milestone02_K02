@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/utils/colors.dart';
+import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,8 +17,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final Color ColorFont1 = Colors.grey.withOpacity(0.5);
-  String Font1 = "Montserrat";
   bool isForgotPressed = false;
   bool isSignupPressed = false;
 
@@ -30,6 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //Info ttg dimensi device
+
     // Full screen width and height
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -52,56 +53,45 @@ class _LoginScreenState extends State<LoginScreen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  const Color.fromARGB(255, 1, 45, 82),
-                  Colors.black.withOpacity(0.9),
+                  baseColor3,
+                  baseColor4,
                 ],
               )),
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 32), //, vertical: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               width: double.infinity,
               child: SingleChildScrollView(
                   child: Container(
-                //padding: MediaQuery.of(context).padding,
                 height: height2,
-                // height: MediaQuery.of(context).size.height -
-                //     MediaQuery.of(context).padding.top -
-                //     kToolbarHeight -
-                //     MediaQuery.of(context).padding.bottom,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Flexible(
-                      child: SizedBox(),
+                    ////Bagian Atas
+
+                    //Space yg bisa stretch biar lebih berisi dan bagian atas bisa adaptasi
+                    const Flexible(
                       flex: 1,
                       fit: FlexFit.tight,
+                      child: SizedBox(),
                     ),
-                    const Align(
+
+                    //Welcome text
+                    Align(
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Welcome!',
                         style: TextStyle(
-                          fontFamily: 'Montserrat',
+                          fontFamily: baseFont1,
                           fontWeight: FontWeight.bold,
-                          color: Colors.yellow,
-                          //height: 1,
+                          color: baseColor2,
                           fontSize: 30,
                         ),
                       ),
                     ),
 
-                    // Flexible(
-                    //   child: Container(),
-                    //   flex: 1,
-                    // ),
-
-                    // SvgPicture.asset(
-                    //   "assets/logo_itb.svg",
-                    //   color: primaryColor,
-                    //   height: 150,
-                    // ),
-
+                    //Space kosong
                     const SizedBox(height: 64),
 
+                    //Username field
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFieldInput(
@@ -111,10 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
 
+                    //Space kosong
                     const SizedBox(
                       height: 24,
                     ),
 
+                    //Password field
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFieldInput(
@@ -125,36 +117,38 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
 
+                    //Space kosong
                     const SizedBox(height: 55),
 
+                    //Login Button
                     ElevatedButton(
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(22),
-                                    side: const BorderSide(
-                                        color: Color.fromARGB(
-                                            255, 255, 219, 32)))),
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                const Color.fromARGB(255, 255, 219, 32)),
+                                    side: BorderSide(color: baseColor2))),
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(baseColor2),
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 100))),
                         onPressed: () {},
-                        child: const Text(
+                        child: Text(
                           "LOG IN",
                           style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              color: Color.fromARGB(255, 1, 45, 82),
+                              fontFamily: baseFont1,
+                              color: baseColor3,
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         )),
 
+                    //Space kosong
                     const SizedBox(
                       height: 24,
                     ),
 
+                    //Forget password button
                     GestureDetector(
                       onTapUp: (details) {
                         setState(() => isForgotPressed = !isForgotPressed);
@@ -166,41 +160,50 @@ class _LoginScreenState extends State<LoginScreen> {
                         text: TextSpan(
                           text: "Forgot Password",
                           style: TextStyle(
-                            fontFamily: "Montserrat",
+                            fontFamily: baseFont1,
                             fontWeight: FontWeight.bold,
                             color: isForgotPressed
                                 ? Colors.white.withOpacity(0.5)
-                                : Colors.grey.withOpacity(0.5),
+                                : baseColor1,
                           ),
                         ),
                       ),
                     ),
 
-                    Expanded(child: SizedBox()),
+                    //Space pemisah antara bagian atas dengan bagian bawah biar lebih fit/padet
+                    const Expanded(child: SizedBox()),
 
+                    ////Bagian Bawah
+
+                    //Divider garis
                     Row(
                       children: <Widget>[
+                        //Divider kiri
                         Expanded(
                             child: Container(
                           margin: const EdgeInsets.only(left: 10, right: 20),
                           child: Divider(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: baseColor1,
                             height: 80,
                             thickness: 1,
                           ),
                         )),
+
+                        //or
                         Text(
                           "or",
                           style: TextStyle(
-                              fontFamily: "Montserrat",
-                              color: Colors.grey.withOpacity(0.5),
+                              fontFamily: baseFont1,
+                              color: baseColor1,
                               fontWeight: FontWeight.bold),
                         ),
+
+                        //Divider kanan
                         Expanded(
                             child: Container(
                           margin: const EdgeInsets.only(left: 20, right: 10),
                           child: Divider(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: baseColor1,
                             height: 80,
                             thickness: 1,
                           ),
@@ -208,62 +211,64 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
 
-                    //Expanded(child: SizedBox()),
-
+                    //Teks Social Login
                     Text(
                       "Social Media Login",
                       style: TextStyle(
-                          fontFamily: Font1,
-                          color: ColorFont1,
+                          fontFamily: baseFont1,
+                          color: baseColor1,
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
                     ),
 
-                    SizedBox(
+                    //Space kosong
+                    const SizedBox(
                       height: 5,
                     ),
 
+                    //Icon-icon social media
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        //Icon Google
                         Container(
-                            //Icon google
                             alignment: Alignment.center,
                             height: 120,
                             width: 100,
                             child: GestureDetector(
                               onTap: () {
-                                print("GOOGLE"); //Nanti bawa ke sign in google
+                                //print("GOOGLE"); //Nanti bawa ke sign in google
                               },
                               child: SvgPicture.asset(
                                 "assets/icons/google_logo.svg",
                                 height: 60,
                               ),
                             )),
+
+                        //Icon Fb
                         Container(
-                            //Icon Fb
                             alignment: Alignment.center,
                             height: 100,
                             width: 100,
                             child: GestureDetector(
                               onTap: () {
-                                print(
-                                    "FACEBOOK"); //Nanti bawa ke sign in facebook
+                                //print("FACEBOOK");   //Nanti bawa ke sign in facebook
                               },
                               child: SvgPicture.asset(
                                 "assets/icons/fb_logo.svg",
                                 height: 75,
                               ),
                             )),
+
+                        //Icon apple
                         Container(
-                          //Icon apple
                           alignment: Alignment.center,
                           height: 100,
                           width: 100,
                           child: GestureDetector(
                             onTap: () {
-                              print("APPLE"); //Nanti bawa ke sign in apple
+                              //print("APPLE"); //Nanti bawa ke sign in apple
                             },
                             child: SvgPicture.asset(
                               "assets/icons/apple_logo.svg",
@@ -274,21 +279,26 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
 
-                    SizedBox(
+                    //Space kosong
+                    const SizedBox(
                       height: 10,
                     ),
 
+                    //Sign up text
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        //Don't have account text
                         Text(
                           "Don't have an account? ",
                           style: TextStyle(
-                              fontFamily: Font1,
+                              fontFamily: baseFont1,
                               fontWeight: FontWeight.bold,
-                              color: ColorFont1),
+                              color: baseColor1),
                         ),
+
+                        //Sign Up Button
                         GestureDetector(
                           onTapUp: ((details) {
                             setState(() => isSignupPressed = !isSignupPressed);
@@ -299,7 +309,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             "Sign Up",
                             style: TextStyle(
-                                fontFamily: Font1,
+                                fontFamily: baseFont1,
                                 fontWeight: FontWeight.bold,
                                 color: isSignupPressed
                                     ? Color.fromARGB(255, 214, 182, 21)
@@ -308,24 +318,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         )
                       ],
                     ),
-                    // RichText(
-                    //   textAlign: TextAlign.end,
-                    //   text: TextSpan(
-                    //       text: "Don't have an account? ",
-                    //       style: TextStyle(
-                    //           fontFamily: Font1,
-                    //           color: ColorFont1,
-                    //           fontWeight: FontWeight.bold),
-                    //       children: const <TextSpan>[
-                    //         TextSpan(
-                    //           text: "Sign Up",
-                    //           style: TextStyle(
-                    //               fontFamily: "Montserrat",
-                    //               color: Color.fromARGB(255, 255, 219, 32)),
-                    //         )
-                    //       ]),
-                    // ),
-                    SizedBox(
+
+                    //Space kosong
+                    const SizedBox(
                       height: 20,
                     )
                   ],
