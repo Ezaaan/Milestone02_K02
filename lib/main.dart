@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:milestone/responsive/mobileScreenLayout.dart';
 import 'package:milestone/responsive/responsive_layouts.dart';
 import 'package:milestone/responsive/webScreenLayout.dart';
+import 'package:milestone/screens/chatWindow_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/utils/colors.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       //   mobileScreenLayout: MobileScreenLayout(),
       //   webScreenLayout: WebScreenLayout(),
       // ),
-      home: LoginScreen(),
+      home: ChatWindowScreen(),
     );
   }
 }
