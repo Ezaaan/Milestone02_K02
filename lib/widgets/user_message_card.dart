@@ -31,7 +31,7 @@ class UserMessageCard extends StatelessWidget {
           ),
           Bubble(
             alignment: Alignment.topRight,
-            margin: BubbleEdges.only(top: 10),
+            margin: BubbleEdges.only(top: 15),
             nip: BubbleNip.rightTop,
             color: baseColor2,
             child: Text(

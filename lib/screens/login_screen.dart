@@ -89,7 +89,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     //Space kosong
-                    const SizedBox(height: 64),
+                    const Flexible(
+                      child: SizedBox(
+                        height: 50,
+                      ),
+                      flex: 1,
+                      fit: FlexFit.loose,
+                    ),
+
+                    //const SizedBox(height: 64),
 
                     //Username field
                     Container(
@@ -118,7 +126,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     //Space kosong
-                    const SizedBox(height: 55),
+                    const Flexible(
+                      child: SizedBox(
+                        height: 50,
+                      ),
+                      flex: 1,
+                      fit: FlexFit.loose,
+                    ),
+
+                    //const SizedBox(height: 55),
 
                     //Login Button
                     ElevatedButton(
@@ -171,7 +187,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     //Space pemisah antara bagian atas dengan bagian bawah biar lebih fit/padet
-                    const Expanded(child: SizedBox()),
+                    const Flexible(
+                        child: SizedBox(), flex: 1, fit: FlexFit.tight),
+
+                    //const Expanded(child: SizedBox()),
 
                     ////Bagian Bawah
 
@@ -184,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           margin: const EdgeInsets.only(left: 10, right: 20),
                           child: Divider(
                             color: baseColor1,
-                            height: 80,
+                            height: 50,
                             thickness: 1,
                           ),
                         )),
@@ -204,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           margin: const EdgeInsets.only(left: 20, right: 10),
                           child: Divider(
                             color: baseColor1,
-                            height: 80,
+                            height: 50,
                             thickness: 1,
                           ),
                         ))
@@ -222,9 +241,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     //Space kosong
-                    const SizedBox(
-                      height: 5,
+                    const Flexible(
+                      child: SizedBox(),
+                      flex: 1,
+                      fit: FlexFit.tight,
                     ),
+
+                    // const SizedBox(
+                    //   height: 5,
+                    // ),
 
                     //Icon-icon social media
                     Row(
@@ -320,9 +345,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     //Space kosong
-                    const SizedBox(
-                      height: 20,
-                    )
+                    const Flexible(
+                        child: SizedBox(), flex: 1, fit: FlexFit.loose)
+                    // const SizedBox(
+                    //   height: 20,
+                    // )
                   ],
                 ),
               )))),

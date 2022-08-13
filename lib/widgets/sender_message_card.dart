@@ -2,6 +2,7 @@ import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
+import 'package:milestone/utils/info_example.dart';
 
 class SenderMessageCard extends StatelessWidget {
   const SenderMessageCard({
@@ -27,9 +28,10 @@ class SenderMessageCard extends StatelessWidget {
             backgroundImage: const NetworkImage(
                 'https://img.icons8.com/pastel-glyph/64/000000/gender-neutral-user.png'),
           ),
+          //constra
           Bubble(
             alignment: Alignment.topLeft,
-            margin: const BubbleEdges.only(top: 10),
+            margin: const BubbleEdges.only(top: 15),
             nip: BubbleNip.leftTop,
             color: baseColor1,
             child: Text(
