@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataFirebase {
-  addUserInfoToDB(String uid, Map<String, dynamic> userInfoMap) async {
+  Future addUserInfoToDB(
+    String uid, Map<String, dynamic> userInfoMap) async {
     return FirebaseFirestore.instance
         .collection("users")
         .doc(uid)
@@ -31,5 +32,32 @@ class DataFirebase {
         .collection("chatrooms")
         .doc(chatRoomID)
         .update(lastMessageInfoMap);
+  }
+
+  createChatRoom(String chatRoomID, Map chatRoomInfoMap) async {
+    final snapShot = await FirebaseFirestore.instance
+    .collection("charooms")
+    .doc(chatRoomID)
+    .get();
+
+    if(snapShot.exists){
+      //chatroom already exist
+      return true;
+    }else{
+      //chatroom does not exists
+      return FirebaseFirestore.instance
+      .collection("chatrooms")
+      .doc(chatRoomID)
+      .set(chatRoomInfoMap);
+    }
+  }
+
+  Future<Stream<QuerySnapshot>> getChatRoomMessages(chatRoomID) async {
+    return FirebaseFirestore.instance
+      .collection("chatrooms")
+      .doc(chatRoomID)
+      .collection("chats")
+      .orderBy("times", descending: true) // biar last message ada di atas, nanti di reverse
+      .snapshots();
   }
 }
