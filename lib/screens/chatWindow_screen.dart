@@ -6,7 +6,7 @@ import 'package:milestone/recources/database.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/utils/prefs.dart';
-import 'package:milestone/widgets/chat_list.dart';
+import 'package:milestone/widgets/chat_list_widget.dart';
 import 'package:random_string/random_string.dart';
 
 class ChatWindowScreen extends StatefulWidget {
@@ -32,6 +32,7 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
   // String myName, myProfile, myUsername, myEmail;
   late String chatRoomID, messageID = "";
   late String myName, myProfilePic, myEmail, theReciever;
+  late Stream messageStream;
   final TextEditingController messageEditingController =
       TextEditingController();
   final messageBorder = OutlineInputBorder(
@@ -91,11 +92,39 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
     }
   }
 
-  getAndSetMessages() async {}
+  Widget chatMessages() {
+    return StreamBuilder(
+      stream: messageStream,
+      builder: ((context, snapshot) {
+        return snapshot.hasData
+            ? ListView.builder(
+                itemCount: (snapshot.data! as QuerySnapshot).docs.length,
+                itemBuilder: (context, index) {
+                  DocumentSnapshot ds =
+                      (snapshot.data! as QuerySnapshot).docs[index];
+                  return Text(ds["message"]);
+                },
+              )
+            : Center(child: CircularProgressIndicator());
+      }),
+    );
+  }
+
+  getAndSetMessages() async {
+    messageStream = await DataFirebase().getChatRoomMessages(chatRoomID);
+    setState(() {});
+  }
 
   onLaunch() async {
     await getMyInfoFromSharedPref();
     getAndSetMessages();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    onLaunch();
+    super.initState();
   }
 
   @override
@@ -116,6 +145,7 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
         width: double.infinity,
         child: Column(
           children: [
+            chatMessages(),
             Row(
               children: [
                 const SizedBox(

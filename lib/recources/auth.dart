@@ -40,7 +40,7 @@ class authFirebase {
         SharedPref().saveEmail(userDetails!.email);
         SharedPref().saveUserID(userDetails.uid);
         SharedPref()
-          .saveUserName(userDetails.email.replaceAll("@gmail.com", ""))
+            .saveUserName(userDetails.email!.replaceAll("@gmail.com", ""));
         SharedPref().saveDisplayName(userDetails.displayName);
       }
     }

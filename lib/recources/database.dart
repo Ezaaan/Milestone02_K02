@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:milestone/utils/prefs.dart';
 
 class DataFirebase {
-  Future addUserInfoToDB(
-    String uid, Map<String, dynamic> userInfoMap) async {
+  Future addUserInfoToDB(String uid, Map<String, dynamic> userInfoMap) async {
     return FirebaseFirestore.instance
         .collection("users")
         .doc(uid)
@@ -35,46 +34,48 @@ class DataFirebase {
         .update(lastMessageInfoMap);
   }
 
-  createChatRoom(String chatRoomID, Map chatRoomInfoMap) async {
+  createChatRoom(
+      String chatRoomID, Map<String, dynamic> chatRoomInfoMap) async {
     final snapShot = await FirebaseFirestore.instance
-    .collection("charooms")
-    .doc(chatRoomID)
-    .get();
+        .collection("charooms")
+        .doc(chatRoomID)
+        .get();
 
-    if(snapShot.exists){
+    if (snapShot.exists) {
       //chatroom already exist
       return true;
-    }else{
+    } else {
       //chatroom does not exists
       return FirebaseFirestore.instance
-      .collection("chatrooms")
-      .doc(chatRoomID)
-      .set(chatRoomInfoMap);
+          .collection("chatrooms")
+          .doc(chatRoomID)
+          .set(chatRoomInfoMap);
     }
   }
 
   Future<Stream<QuerySnapshot>> getChatRoomMessages(chatRoomID) async {
     return FirebaseFirestore.instance
-      .collection("chatrooms")
-      .doc(chatRoomID)
-      .collection("chats")
-      .orderBy("times", descending: true) // biar last message ada di atas, nanti di reverse
-      .snapshots();
+        .collection("chatrooms")
+        .doc(chatRoomID)
+        .collection("chats")
+        .orderBy("time",
+            descending: true) // biar last message ada di atas, nanti di reverse
+        .snapshots();
   }
 
   Future<Stream<QuerySnapshot>> getChatRooms() async {
-    String myName = await SharedPref().getUserName();
+    String? myUserName = await SharedPref().getUserName();
     return FirebaseFirestore.instance
-      .collection("chatrooms")
-      .orderBy("lastMessageTime", descending: true)
-      .where("users", arrayContains: myUsername)
-      .snapshots();
+        .collection("chatrooms")
+        .orderBy("lastMessageTime", descending: true)
+        .where("users", arrayContains: myUserName)
+        .snapshots();
   }
 
   Future<QuerySnapshot> getUserInfo(String username) async {
     return await FirebaseFirestore.instance
-      .collection("users")
-      .where("username", isEqualTo: username)
-      .get();
+        .collection("users")
+        .where("username", isEqualTo: username)
+        .get();
   }
 }

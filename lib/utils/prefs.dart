@@ -11,11 +11,17 @@ class SharedPref {
   static String userAgeKey = 'USERAGEKEY';
   static String userJobKey = 'USERJOBKEY';
   static String userCityKey = 'USERCITYKEY';
+  static String userNameKey = 'USERNAMEKEY';
 
   //save data
   Future<bool> saveUserID(String getUserID) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString(userIDKey, getUserID);
+  }
+
+  Future<bool> saveUserName(String getUserName) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setString(userNameKey, getUserName);
   }
 
   Future<bool> saveFullName(String getFullName) async {
@@ -75,6 +81,11 @@ class SharedPref {
   Future<String?> getUserID() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(userIDKey);
+  }
+
+  Future<String?> getUserName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(userNameKey);
   }
 
   Future<String?> getFullName() async {

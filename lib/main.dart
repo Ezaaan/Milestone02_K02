@@ -5,6 +5,7 @@ import 'package:milestone/responsive/mobileScreenLayout.dart';
 import 'package:milestone/responsive/responsive_layouts.dart';
 import 'package:milestone/responsive/webScreenLayout.dart';
 import 'package:milestone/screens/chatWindow_screen.dart';
+import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/screens/findFriend_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/test_screens/signup_test.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       // ),
 
       //Kalau mau ngerun dan liat hasil screen bisa diganti disini
-      home: FindFriendScreen(),
+      home: LoginScreen(),
     );
   }
 }

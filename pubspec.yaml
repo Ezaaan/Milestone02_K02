@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: milestone
 description: A new Flutter project.
 
@@ -125,4 +124,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
->>>>>>> 29cce3c820cf1f776401a299870f813b03dcc298
