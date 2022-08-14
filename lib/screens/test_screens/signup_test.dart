@@ -10,14 +10,14 @@ import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 import 'package:milestone/recources/temp_auth.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+class SignupTestScreen extends StatefulWidget {
+  const SignupTestScreen({Key? key}) : super(key: key);
 
   @override
-  _SignupScreenState createState() => _SignupScreenState();
+  _SignupTestScreenState createState() => _SignupTestScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignupTestScreenState extends State<SignupTestScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _phonenumController = TextEditingController();

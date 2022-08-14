@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/login_screen.dart';
+import 'package:milestone/screens/test_screens/signup_test.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
@@ -15,10 +17,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
-
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
@@ -29,8 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
     double height3 = height - padding.top - kToolbarHeight;
 
     return Scaffold(
-      body: SafeArea(child: Container(
-                decoration: BoxDecoration(
+      body: SafeArea(
+          child: Container(
+              decoration: BoxDecoration(
                   gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -91,7 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 100))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignupTestScreen()));
+                        },
                         child: Text(
                           "SIGN UP",
                           style: TextStyle(
@@ -100,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         )),
-                                      //Login Button
+                    //Login Button
                     //Space kosong
                     const Flexible(
                       child: SizedBox(
@@ -109,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 1,
                       fit: FlexFit.loose,
                     ),
-                    
+
                     ElevatedButton(
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
@@ -122,7 +126,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 100))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                        },
                         child: Text(
                           "LOG IN",
                           style: TextStyle(

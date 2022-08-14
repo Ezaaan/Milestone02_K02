@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:milestone/responsive/mobileScreenLayout.dart';
 import 'package:milestone/responsive/responsive_layouts.dart';
 import 'package:milestone/responsive/webScreenLayout.dart';
+import 'package:milestone/screens/HomeScreen.dart';
 import 'package:milestone/screens/chatWindow_screen.dart';
 import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/screens/findFriend_screen.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
       // ),
 
       //Kalau mau ngerun dan liat hasil screen bisa diganti disini
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
