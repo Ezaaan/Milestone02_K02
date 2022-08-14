@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:milestone/utils/prefs.dart';
 
 class DataFirebase {
   Future addUserInfoToDB(
@@ -58,6 +59,15 @@ class DataFirebase {
       .doc(chatRoomID)
       .collection("chats")
       .orderBy("times", descending: true) // biar last message ada di atas, nanti di reverse
+      .snapshots();
+  }
+
+  Future<Stream<QuerySnapshot>> getChatRooms() async {
+    String myName = await SharedPref().getUserName();
+    return FirebaseFirestore.instance
+      .collection("chatrooms")
+      .orderBy("lastMessageTime", descending: true)
+      .where("users", arrayContains: myUsername)
       .snapshots();
   }
 }
