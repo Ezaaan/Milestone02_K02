@@ -31,7 +31,7 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
   // String chatRoomID, messageID = "";
   // String myName, myProfile, myUsername, myEmail;
   late String chatRoomID, messageID = "";
-  late String myName, myProfilePic, myEmail, theReciever;
+  late String myName, myProfilePic, myEmail, theReciever, myUserName;
   late Stream messageStream;
   final TextEditingController messageEditingController =
       TextEditingController();
@@ -42,8 +42,9 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
   getMyInfoFromSharedPref() async {
     myName = (await SharedPref().getNickName())!;
     myEmail = (await SharedPref().getEmail())!;
+    myUserName = (await SharedPref().getUserName())!;
 
-    chatRoomID = getChatRoomIDByUsernames(widget.chatWithUsername, myName);
+    chatRoomID = getChatRoomIDByUsernames(widget.chatWithUsername, myUserName);
   }
 
   getChatRoomIDByUsernames(String a, String b) {
@@ -122,7 +123,6 @@ class _ChatWindowScreenState extends State<ChatWindowScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     onLaunch();
     super.initState();
   }

@@ -5,6 +5,7 @@ import 'package:milestone/responsive/mobileScreenLayout.dart';
 import 'package:milestone/responsive/responsive_layouts.dart';
 import 'package:milestone/responsive/webScreenLayout.dart';
 import 'package:milestone/screens/HomeScreen.dart';
+import 'package:milestone/screens/RegisterScreen.dart';
 import 'package:milestone/screens/chatWindow_screen.dart';
 import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/screens/findFriend_screen.dart';

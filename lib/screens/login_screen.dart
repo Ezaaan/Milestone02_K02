@@ -3,8 +3,11 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/recources/auth.dart';
+import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
+import 'package:milestone/utils/utils.dart';
 import 'package:milestone/widgets/text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,12 +22,30 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool isForgotPressed = false;
   bool isSignupPressed = false;
+  bool isLoading = false;
 
   @override
   void dispose() {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+  }
+
+  void loginUser() async {
+    setState(() {
+      isLoading = true;
+    });
+    String res = await authFirebase().loginUser(
+        email: _emailController.text, password: _passwordController.text);
+    if (res == "Success") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => ChatList()));
+    } else {
+      showSnackBar(res, context);
+    }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -149,15 +170,19 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 100))),
-                        onPressed: () {},
-                        child: Text(
-                          "LOG IN",
-                          style: TextStyle(
-                              fontFamily: baseFont1,
-                              color: baseColor3,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        )),
+                        onPressed: loginUser,
+                        child: isLoading
+                            ? const Center(
+                                child: CircularProgressIndicator(
+                                    color: baseColor3))
+                            : Text(
+                                "LOG IN",
+                                style: TextStyle(
+                                    fontFamily: baseFont1,
+                                    color: baseColor3,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              )),
 
                     //Space kosong
                     const SizedBox(

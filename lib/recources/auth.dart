@@ -93,4 +93,21 @@ class authFirebase {
     }
     return res;
   }
+
+  Future<String> loginUser(
+      {required String email, required String password}) async {
+    String res = "Some error occured";
+
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await auth.signInWithEmailAndPassword(email: email, password: password);
+        res = "Success";
+      } else {
+        res = "Please enter all the field";
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
 }
