@@ -7,8 +7,6 @@ import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 
-apakek
-
 class FindFriendScreen extends StatefulWidget {
   const FindFriendScreen({Key? key}) : super(key: key);
 
