@@ -9,8 +9,13 @@ import 'package:milestone/recources/auth.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/utils/prefs.dart';
+import 'package:milestone/utils/utils.dart';
 import 'package:milestone/widgets/text_field.dart';
 import 'package:milestone/recources/temp_auth.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:typed_data';
+import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -35,6 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool isSignupPressed = false;
   String email = "";
   String password = "";
+  Uint8List? _image;
 
   @override
   void initState() {
@@ -105,6 +111,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _cityController.dispose();
   }
 
+  void selectImage() async {
+    Uint8List im = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = im;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     //Info ttg dimensi device
@@ -169,16 +182,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     // Gambar PP
                     Stack(
                       children: [
-                        CircleAvatar(
-                          radius: 64,
-                          backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1615038552039-e1b271f14ec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
-                        ),
+                        _image != null
+                            ? CircleAvatar(
+                                radius: 64,
+                                backgroundImage: MemoryImage(_image!),
+                              )
+                            : const CircleAvatar(
+                                radius: 64,
+                                backgroundImage: NetworkImage(
+                                    'https://images.unsplash.com/photo-1615038552039-e1b271f14ec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                              ),
                         Positioned(
                             bottom: -10,
                             left: 80,
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: selectImage,
                               icon: const Icon(
                                 Icons.add_a_photo,
                               ),

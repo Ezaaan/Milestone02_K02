@@ -56,6 +56,7 @@ class authFirebase {
       required String job,
       required String city,
       required String uid
+
       //required String bio,
       //required Uint8List file,
       }) async {
