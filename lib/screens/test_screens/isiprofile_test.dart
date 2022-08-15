@@ -166,6 +166,26 @@ class _ProfileScreenTestState extends State<ProfileScreenTest> {
                       ),
                     ),
 
+                    // Gambar PP
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 64,
+                          backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1615038552039-e1b271f14ec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                        ),
+                        Positioned(
+                            bottom: -10,
+                            left: 80,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.add_a_photo,
+                              ),
+                            ))
+                      ],
+                    ),
+
                     //Space kosong
                     const SizedBox(height: 64),
 
