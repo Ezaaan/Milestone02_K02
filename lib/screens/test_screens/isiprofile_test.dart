@@ -12,14 +12,14 @@ import 'package:milestone/utils/prefs.dart';
 import 'package:milestone/widgets/text_field.dart';
 import 'package:milestone/recources/temp_auth.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfileScreenTest extends StatefulWidget {
+  const ProfileScreenTest({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _ProfileScreenTestState createState() => _ProfileScreenTestState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenTestState extends State<ProfileScreenTest> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _phonenumController = TextEditingController();

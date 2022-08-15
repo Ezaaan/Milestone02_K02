@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/RegisterScreen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/test_screens/signup_test.dart';
 import 'package:milestone/utils/colors.dart';
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     vertical: 15, horizontal: 100))),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignupTestScreen()));
+                              builder: (context) => RegisterScreen()));
                         },
                         child: Text(
                           "SIGN UP",

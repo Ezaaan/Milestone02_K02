@@ -149,7 +149,7 @@ class _SignupTestScreenState extends State<SignupTestScreen> {
                                     vertical: 15, horizontal: 100))),
                         onPressed: () async {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => ProfileScreenTest()));
                           String res = await tempAuthFirebase().SignUp(
                             email: _emailController.text,
                             password: _passwordController.text,
