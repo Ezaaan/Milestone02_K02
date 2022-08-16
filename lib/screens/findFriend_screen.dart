@@ -7,6 +7,10 @@ import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 class FindFriendScreen extends StatefulWidget {
   const FindFriendScreen({Key? key}) : super(key: key);
 
