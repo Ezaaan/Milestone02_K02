@@ -79,25 +79,15 @@ class _ChatListState extends State<ChatList> {
                       ),
                     ),
 
-                    //Space kosong
+                    //Empty space (for distance)
                     const SizedBox(height: 20),
 
-                    //Search field
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: TextFieldInput(
-                        hintText: "Search",
-                        textInputType: TextInputType.text,
-                        textEditingController: _searchController,
-                      ),
-                    ),
-
-                    //Space kosong
+                    //Empty space (for distance)
                     const SizedBox(
                       height: 24,
                     ),
 
-                    //Space kosong
+                    //Empty space (for distance)
                     const SizedBox(height: 0),
 
                     //chat Button
