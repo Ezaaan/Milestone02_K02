@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/temp_auth.dart';
 import 'package:milestone/screens/login_screen.dart';
-import 'package:milestone/screens/test_screens/isiprofile_test.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
@@ -19,7 +18,7 @@ class ResetPassword extends StatefulWidget {
 
 class _ResetPasswordState extends State<ResetPassword> {
   final TextEditingController _emailController = TextEditingController();
-  String title;
+  //String title;
 
   @override
   void dispose() {
@@ -130,42 +129,42 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
 
                   //Reset password button
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(22),
-                                      side: BorderSide(color: baseColor2))),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(baseColor2),
-                          padding: MaterialStateProperty.all<EdgeInsets>(
-                              const EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 100))),
-                      onPressed: () async {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ProfileScreenTest()));
-                        String res = await tempAuthFirebase().ResetPassword(
-                          email: _emailController.text,
-                        );
-                        //phoneNum: _phonenumController.text);
-                        print(res);
-                      },
-                      child: Text(
-                        "RESET PASSWORD",
-                        style: TextStyle(
-                            fontFamily: baseFont1,
-                            color: baseColor3,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      )),
-                      firebaseButton(context, "Reset Password"), (){
-                        FirebaseAuth.instance
-                          .sendPasswordResetEmail(email: _emailController.text)
-                          .then(value) => Navigator.of(context).pop();
-                      }
-                  //Space kosong
-                  const Flexible(child: SizedBox(), flex: 1, fit: FlexFit.loose)
+                  // ElevatedButton(
+                  //     style: ButtonStyle(
+                  //         shape:
+                  //             MaterialStateProperty.all<RoundedRectangleBorder>(
+                  //                 RoundedRectangleBorder(
+                  //                     borderRadius: BorderRadius.circular(22),
+                  //                     side: BorderSide(color: baseColor2))),
+                  //         backgroundColor:
+                  //             MaterialStateProperty.all<Color>(baseColor2),
+                  //         padding: MaterialStateProperty.all<EdgeInsets>(
+                  //             const EdgeInsets.symmetric(
+                  //                 vertical: 15, horizontal: 100))),
+                  //     onPressed: () async {
+                  //       Navigator.of(context).push(MaterialPageRoute(
+                  //           builder: (context) => ProfileScreenTest()));
+                  //       String res = await tempAuthFirebase().ResetPassword(
+                  //         email: _emailController.text,
+                  //       );
+                  //       //phoneNum: _phonenumController.text);
+                  //       print(res);
+                  //     },
+                  //     child: Text(
+                  //       "RESET PASSWORD",
+                  //       style: TextStyle(
+                  //           fontFamily: baseFont1,
+                  //           color: baseColor3,
+                  //           fontSize: 20,
+                  //           fontWeight: FontWeight.bold),
+                  //     )),
+                  //     firebaseButton(context, "Reset Password"), (){
+                  //       FirebaseAuth.instance
+                  //         .sendPasswordResetEmail(email: _emailController.text)
+                  //         .then(value) => Navigator.of(context).pop();
+                  //     }
+                  // //Space kosong
+                  // const Flexible(child: SizedBox(), flex: 1, fit: FlexFit.loose)
                 ],
               ),
             ),

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/screens/RegisterScreen.dart';
 import 'package:milestone/screens/login_screen.dart';
-import 'package:milestone/screens/test_screens/signup_test.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';

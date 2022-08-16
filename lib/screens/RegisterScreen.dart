@@ -6,7 +6,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/temp_auth.dart';
 import 'package:milestone/screens/IsiProfile_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
-import 'package:milestone/screens/test_screens/isiprofile_test.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
