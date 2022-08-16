@@ -118,7 +118,7 @@ class authFirebase {
     return res;
   }
 
-  Future<void> signOut() async{
-    await _auth.signOut();
+  Future<void> signOut() async {
+    await auth.signOut();
   }
 }

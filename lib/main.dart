@@ -13,7 +13,6 @@ import 'package:milestone/screens/findFriend_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/profile_screen.dart';
 
-
 import 'package:milestone/screens/test_screens/signup_test.dart';
 import 'package:milestone/utils/colors.dart';
 
@@ -53,7 +52,7 @@ class MyApp extends StatelessWidget {
       // ),
 
       //Kalau mau ngerun dan liat hasil screen bisa diganti disini
-      home: ProfileScreen(),
+
       home: HomeScreen(),
     );
   }
