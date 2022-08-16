@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/temp_auth.dart';
+import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/test_screens/isiprofile_test.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
@@ -350,6 +351,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       GestureDetector(
                         onTapUp: ((details) {
                           setState(() => isSigninPressed = !isSigninPressed);
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
                         }),
                         onTapDown: ((details) {
                           setState(() => isSigninPressed = !isSigninPressed);
