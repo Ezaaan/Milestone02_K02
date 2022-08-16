@@ -1,0 +1,21 @@
+2022/08/16-15:37:36.725 295c Reusing MANIFEST C:\Users\Zaki\AppData\Local\Temp\flutter_tools.33b04aad\flutter_tools_chrome_device.ed250329\Default\IndexedDB\http_localhost_52064.indexeddb.leveldb/MANIFEST-000001
+2022/08/16-15:37:36.759 295c Recovering log #4
+2022/08/16-15:37:36.760 295c Reusing old log C:\Users\Zaki\AppData\Local\Temp\flutter_tools.33b04aad\flutter_tools_chrome_device.ed250329\Default\IndexedDB\http_localhost_52064.indexeddb.leveldb/000004.log 
+2022/08/16-15:37:37.273 5300 Level-0 table #8: started
+2022/08/16-15:37:37.276 5300 Level-0 table #8: 4304 bytes OK
+2022/08/16-15:37:37.280 5300 Delete type=0 #4
+2022/08/16-15:37:37.280 5300 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2022/08/16-15:38:15.023 295c Compacting 1@1 + 1@2 files
+2022/08/16-15:38:15.027 295c Generated table #9@1: 41 keys, 3014 bytes
+2022/08/16-15:38:15.027 295c Compacted 1@1 + 1@2 files => 3014 bytes
+2022/08/16-15:38:15.029 295c compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/08/16-15:38:15.029 295c Delete type=2 #5
+2022/08/16-15:38:15.029 295c Delete type=2 #8
+2022/08/16-15:51:13.842 5300 Level-0 table #11: started
+2022/08/16-15:51:13.915 5300 Level-0 table #11: 6520 bytes OK
+2022/08/16-15:51:13.917 5300 Delete type=0 #7
+2022/08/16-15:51:13.918 5300 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2022/08/16-15:51:13.918 5300 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x01C\x00f\x00i\x00r\x00e\x00b\x00a\x00s\x00e\x00:\x00a\x00u\x00t\x00h\x00U\x00s\x00e\x00r\x00:\x00A\x00I\x00z\x00a\x00S\x00y\x00C\x00X\x00z\x00O\x00J\x009\x00s\x00Z\x00D\x00D\x00Z\x00_\x00r\x00S\x00i\x00X\x00v\x00a\x00X\x00S\x00u\x00V\x00z\x00H\x00H\x006\x00Y\x00L\x00H\x00M\x00W\x003\x00Y\x00:\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]' @ 191 : 1
+2022/08/16-15:51:13.918 5300 Compacting 1@1 + 1@2 files
+2022/08/16-15:51:13.992 5300 Generated table #12@1: 36 keys, 2858 bytes
+2022/08/16-15:51:13.992 5300 Compacted 1@1 + 1@2 files => 2858 bytes

@@ -1,0 +1,4 @@
+2022/08/16-14:17:58.814 5028 Reusing MANIFEST C:\Users\Zaki\AppData\Local\Temp\flutter_tools.33b04aad\flutter_tools_chrome_device.ed250329\Default\shared_proto_db\metadata/MANIFEST-000001
+2022/08/16-14:17:58.815 5028 Recovering log #3
+2022/08/16-14:17:58.815 5028 (ignoring error) C:\Users\Zaki\AppData\Local\Temp\flutter_tools.33b04aad\flutter_tools_chrome_device.ed250329\Default\shared_proto_db\metadata/000003.log: dropping 1364 bytes; Corruption: checksum mismatch
+2022/08/16-14:17:58.815 5028 Reusing old log C:\Users\Zaki\AppData\Local\Temp\flutter_tools.33b04aad\flutter_tools_chrome_device.ed250329\Default\shared_proto_db\metadata/000003.log 
