@@ -31,4 +31,4 @@
 
 ## Cara penggunaan
 
-....
+Di folder 'Src' terdapat folder 'APP' yang berisi file apk untuk dapat di buka
