@@ -52,7 +52,16 @@ class MyApp extends StatelessWidget {
       // ),
 
       //Kalau mau ngerun dan liat hasil screen bisa diganti disini
-
+      home: FutureBuilder(
+        future: authFirebase().getCurrentUser(),
+        builder: (context, AsyncSnapshot<dynamic> snapshot) {
+          if (snapshot.hasData) {
+            return HomeScreen();
+          } else {
+            return LoginScreen();
+          }
+        },
+      ),
       home: HomeScreen(),
     );
   }
