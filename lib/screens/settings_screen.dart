@@ -7,7 +7,7 @@ import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen ({Key? key}) : super(key: key);
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
@@ -65,59 +65,88 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 height: height2,
                 child: Column(
                   children: [
-                    
-                    Stack(
-                      alignment: Alignment.topLeft,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Stack(
+                          alignment: AlignmentDirectional.topEnd,
                           children: [
                             CircleAvatar(
                               backgroundColor: baseColor2,
-                              radius: 24,
+                              radius: 30,
                             ),
                             Positioned(
-                                left: -4,
-                                top: -4,
+                                left: 9,
+                                top: 7,
                                 child: IconButton(
-                                    padding: EdgeInsets.symmetric(horizontal: 70),
+                                    //padding: EdgeInsets.symmetric(horizontal: 70),
                                     onPressed: () {},
-                                    icon: SvgPicture.asset("assets/icons/user_icon.svg",
+                                    icon: SvgPicture.asset(
+                                      "assets/icons/user_icon.svg",
                                       color: Colors.white,
                                       height: 40,
                                     ))),
-                                     ],
+                          ],
                         ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Nama Lengkap',
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 50),
+                            child: Text(
+                                'Nama Lengkap',
+                                style: TextStyle(
+                                  fontFamily: baseFont1,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  height : 2,
+                                ),
+                              ),
+                            ),
+                            const Divider(
+                                color: Colors.white,
+                                height: 20,
+                              ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 10),
+                             child: Text(
+                                'Username',
+                                style: TextStyle(
+                                  fontFamily: baseFont1,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
+                        
+                      ],
                     ),
-                  const Divider(
-                    color: Colors.white,
-                  height: 20,
-                  ),
-                  Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Username',
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
+                    
+                      ],
                     ),
+                  Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Divider(
+                                color: Colors.white,
+                                height: 20,
+                              ),
+                            ]),
+                        
                     //Space kosong
                     const SizedBox(height: 20),
 
                     //Search field
-                   
 
                     //Space kosong
                     const SizedBox(
@@ -129,121 +158,173 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                     //chat Button
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Align(
-                      child: Text(
-                        'Account',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'Account',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
+                        ),
                       ],
                     ),
-                    //Space kosong
-                    const SizedBox(
-                      height: 15,
-                    ),
 
-                     Align(
-                      child: Text(
-                        'Notifications',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'Notifications',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                   
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
-                    ),
-
-                    Align(
-                      child: Text(
-                        'Privacy',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
                         ),
-                      ),
-                    ),
-                   
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
+                      ],
                     ),
 
-
-                      Align(
-                      child: Text(
-                        'Security',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'Privacy',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                   
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
-                    ),
-
-
-                      Align(
-                      child: Text(
-                        'Help',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
                         ),
-                      ),
-                    ),
-                   
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
+                      ],
                     ),
 
-                  Align(
-                      child: Text(
-                        'About',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'Security',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                   
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      ],
                     ),
 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'Help',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      ],
+                    ),
 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 20, left: 20),
+                          child: Text(
+                            'About',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      ],
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.only(bottom: 1, left: 20, top: 40),
+                          child: Text(
+                            'Log out <username>',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: baseFont1,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 33, 129, 226),
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        //Space kosong
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      ],
+                    ),
                     //Space pemisah antara bagian atas dengan bagian bawah biar lebih fit/padet
                     const Expanded(child: SizedBox()),
 
@@ -266,67 +347,66 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
 
                     Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.fromLTRB(10, 10, 5, 10),
-                    height: 70,
-                    width: double.infinity,
-                    color: baseColor3,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(
-                          width: 50,
-                        ),
-                        //const SizedBox(width: 30),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.search_outlined,
-                              color: Colors.white,
-                              size: 40,
-                            )),
-                        IconButton(
-                            padding: EdgeInsets.symmetric(horizontal: 70),
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.message_outlined,
-                              color: Colors.white,
-                              size: 40,
-                            )),
-                        //
-                        //const SizedBox(width: 10),
+                      alignment: Alignment.bottomCenter,
+                      padding: EdgeInsets.fromLTRB(10, 10, 5, 10),
+                      height: 70,
+                      width: double.infinity,
+                      color: baseColor3,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          //const SizedBox(width: 30),
+                          IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 70),
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.search_outlined,
+                                color: Colors.white,
+                                size: 40,
+                              )),
+                          //
+                          //const SizedBox(width: 10),
 
-                        IconButton(
-                            onPressed: () {},
-                            iconSize: 40,
-                            icon: SvgPicture.asset("assets/icons/user_icon.svg",
-                                color: Colors.white, height: 40)),
+                          IconButton(
+                              onPressed: () {},
+                              iconSize: 40,
+                              icon: Icon(
+                                Icons.message_outlined,
+                                color: Colors.white,
+                                size: 40,
+                              )),
 
-                        Stack(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: baseColor2,
-                              radius: 24,
-                            ),
-                            Positioned(
-                                left: 10,
-                                top: 10,
-                                child: IconButton(
-                                    padding: EdgeInsets.symmetric(horizontal: 70),
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.settings,
-                                      color: Colors.white,
-                                      size: 40,
-                                    ))),
-                          ],
-                        ),
-                        
-                        
-                            
-                      ],
-                    ),
-                  )
+                          IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 70),
+                              onPressed: () {},
+                              icon: SvgPicture.asset(
+                                  "assets/icons/user_icon.svg",
+                                  color: Colors.white,
+                                  height: 40)),
+                          Stack(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: baseColor2,
+                                radius: 24,
+                              ),
+                              Positioned(
+                                  left: -4,
+                                  top: -4,
+                                  child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.settings,
+                                        color: Colors.white,
+                                        size: 40,
+                                      ))),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               )))),
