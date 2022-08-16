@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/auth.dart';
 import 'package:milestone/screens/RegisterScreen.dart';
@@ -19,6 +20,8 @@ class InterestScreen extends StatefulWidget {
 }
 
 class _InterestScreenState extends State<InterestScreen> {
+  bool isPressed = false;
+
   @override
   Widget build(BuildContext context) {
     //Info ttg dimensi device
@@ -110,9 +113,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -136,9 +143,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -162,9 +173,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -188,9 +203,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -214,9 +233,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -240,9 +263,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -265,8 +292,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                 ),
                                 Expanded(child: SizedBox()),
                                 IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.check, color: baseColor2))
+                                    onPressed: () {
+                                      isPressed = !isPressed;
+                                    },
+                                    icon: Icon(Icons.check,
+                                        color: isPressed
+                                            ? baseColor1
+                                            : baseColor2))
                               ]),
                             )
                           ],
@@ -296,9 +328,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -322,9 +358,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -348,9 +388,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -374,9 +418,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -400,9 +448,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -426,9 +478,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                     ),
                                     Expanded(child: SizedBox()),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          isPressed = !isPressed;
+                                        },
                                         icon: Icon(Icons.check,
-                                            color: baseColor2))
+                                            color: isPressed
+                                                ? baseColor1
+                                                : baseColor2))
                                   ],
                                 )),
                             SizedBox(
@@ -451,8 +507,13 @@ class _InterestScreenState extends State<InterestScreen> {
                                 ),
                                 Expanded(child: SizedBox()),
                                 IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.check, color: baseColor2))
+                                    onPressed: () {
+                                      isPressed = !isPressed;
+                                    },
+                                    icon: Icon(Icons.check,
+                                        color: isPressed
+                                            ? baseColor1
+                                            : baseColor2))
                               ]),
                             )
                           ],
@@ -465,7 +526,9 @@ class _InterestScreenState extends State<InterestScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             icon: Icon(
                               Icons.arrow_back_ios_new_outlined,
                               color: Colors.white,
@@ -473,7 +536,10 @@ class _InterestScreenState extends State<InterestScreen> {
                             )),
                         Expanded(child: SizedBox()),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ChatListScreen()));
+                            },
                             icon: Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: Colors.white,

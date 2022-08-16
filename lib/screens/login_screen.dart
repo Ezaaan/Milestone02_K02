@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text, password: _passwordController.text);
     if (res == "Success") {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ChatList()));
+          .push(MaterialPageRoute(builder: (context) => ChatListScreen()));
     } else {
       showSnackBar(res, context);
     }
@@ -171,7 +171,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 100))),
-                        onPressed: loginUser,
+                        onPressed: () {
+                          loginUser;
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ChatListScreen()));
+                        },
                         child: isLoading
                             ? const Center(
                                 child: CircularProgressIndicator(

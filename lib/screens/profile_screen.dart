@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/chat_list.dart';
+import 'package:milestone/screens/findFriend_screen.dart';
+import 'package:milestone/screens/settings_screen.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
@@ -62,16 +65,16 @@ class _ProfileState extends State<ProfileScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                         CircleAvatar(
-                            radius: 30,
-                            backgroundColor: baseColor2,
-                            child: SvgPicture.asset(
-                                "assets/icons/user_icon.svg",
-                                color: Colors.white,
-                                height: 40,
-                            ),
+                          radius: 30,
+                          backgroundColor: baseColor2,
+                          child: SvgPicture.asset(
+                            "assets/icons/user_icon.svg",
+                            color: Colors.white,
+                            height: 40,
+                          ),
                         ),
                         const SizedBox(
-                            height: 10,
+                          height: 10,
                         ),
                         Container(
                             color: baseColor1,
@@ -79,277 +82,247 @@ class _ProfileState extends State<ProfileScreen> {
                             height: 20,
                             alignment: Alignment.topCenter,
                             child: Text(
-                                "Tekan untuk ubah ",
-                                style: TextStyle(
-                                    color: Colors.white, 
-                                    fontFamily: baseFont1, 
-                                    fontWeight: FontWeight.bold),
-                            )
-                        ),
+                              "Tekan untuk ubah ",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: baseFont1,
+                                  fontWeight: FontWeight.bold),
+                            )),
                         const SizedBox(
-                            height: 10,
+                          height: 10,
                         ),
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Nama",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Siapa",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
-                        ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Nama",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Siapa",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Username",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Siapa",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
-                        ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Username",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Siapa",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
-                        ),    
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Bio",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Atur",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor1, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Bio",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Atur",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         const SizedBox(height: 40),
-
                         Divider(
-                            height: 10, 
-                            thickness: 50, 
-                            color: baseColor1,
-                        ),                    
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Jenis Kelamin",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Atur",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor1, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
+                          height: 10,
+                          thickness: 50,
+                          color: baseColor1,
                         ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Jenis Kelamin",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Atur",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Tanggal Lahir",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Atur",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor1, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
-                        ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Tanggal Lahir",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Atur",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Email",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Atur",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor1, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
-                        ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Email",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Atur",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-
-                        Row(
-                            children: [
-                                const SizedBox(
-                                    width: 20,
-                                    ),
-                                Text(
-                                    "Ubah Password",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor3, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                    "Atur",
-                                    style: TextStyle(
-                                        fontFamily: baseFont1, 
-                                        color: baseColor1, 
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                ),
-                                IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(
-                                        Icons.arrow_forward_ios_outlined, 
-                                        color: baseColor1,
-                                    ))
-                            ]
-                        ),
-
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Ubah Password",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          const Expanded(child: SizedBox()),
+                          Text(
+                            "Atur",
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: baseColor1,
+                              ))
+                        ]),
                         Divider(
-                            height: 10, 
-                            thickness: 1, 
-                            color: baseColor1,
+                          height: 10,
+                          thickness: 1,
+                          color: baseColor1,
                         ),
-                        
                       ],
                     ),
                   ),
@@ -376,20 +349,28 @@ class _ProfileState extends State<ProfileScreen> {
                                 left: -4,
                                 top: -4,
                                 child: IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  FindFriendScreen()));
+                                    },
                                     icon: Icon(
-                                        Icons.search_outlined,
-                                        color: Colors.white,
-                                        size: 40,
+                                      Icons.search_outlined,
+                                      color: Colors.white,
+                                      size: 40,
                                     ))),
                           ],
                         ),
                         //const SizedBox(width: 30),
-                        
+
                         //Tab Message
                         IconButton(
                             padding: EdgeInsets.symmetric(horizontal: 70),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ChatListScreen()));
+                            },
                             icon: Icon(
                               Icons.message_outlined,
                               color: Colors.white,
@@ -406,15 +387,15 @@ class _ProfileState extends State<ProfileScreen> {
                               radius: 24,
                             ),
                             Positioned(
-                                left: -2,
-                                top: -4,
-                                child: IconButton(
-                                    onPressed: () {},
-                                    iconSize: 35,
-                                    icon: SvgPicture.asset(
-                                        "assets/icons/user_icon.svg",
-                                        color: Colors.white,
-                                        height: 40)),
+                              left: -2,
+                              top: -4,
+                              child: IconButton(
+                                  onPressed: () {},
+                                  iconSize: 35,
+                                  icon: SvgPicture.asset(
+                                      "assets/icons/user_icon.svg",
+                                      color: Colors.white,
+                                      height: 40)),
                             ),
                           ],
                         ),
@@ -422,7 +403,10 @@ class _ProfileState extends State<ProfileScreen> {
                         // Tab Settings
                         IconButton(
                             padding: EdgeInsets.symmetric(horizontal: 70),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SettingsScreen()));
+                            },
                             icon: Icon(
                               Icons.settings,
                               color: Colors.white,

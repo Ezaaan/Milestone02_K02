@@ -1,32 +1,28 @@
 import 'dart:ui';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/chatWindow_screen.dart';
+import 'package:milestone/screens/findFriend_screen.dart';
+import 'package:milestone/screens/profile_screen.dart';
+import 'package:milestone/screens/settings_screen.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
 
-class ChatList extends StatefulWidget {
-  const ChatList({Key? key}) : super(key: key);
+class ChatListScreen extends StatefulWidget {
+  const ChatListScreen({Key? key}) : super(key: key);
 
   @override
-  _ChatListState createState() => _ChatListState();
+  _ChatListScreenState createState() => _ChatListScreenState();
 }
 
-class _ChatListState extends State<ChatList> {
+class _ChatListScreenState extends State<ChatListScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _searchController = TextEditingController();
   bool isForgotPressed = false;
   bool isSignupPressed = false;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
-    _searchController.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,244 +45,239 @@ class _ChatListState extends State<ChatList> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  baseColor3,
-                  baseColor4,
-                ],
-              )),
-              padding: const EdgeInsets.symmetric(horizontal: 32),
+              color: Colors.white,
               width: double.infinity,
-              child: SingleChildScrollView(
-                  child: Container(
-                height: height2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Chats',
-                        style: TextStyle(
-                          fontFamily: baseFont1,
-                          fontWeight: FontWeight.bold,
-                          color: baseColor2,
-                          fontSize: 30,
-                        ),
-                      ),
-                    ),
-
-                    //Empty space (for distance)
-                    const SizedBox(height: 20),
-
-                    //Search field
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: TextFieldInput(
-                        hintText: "Search",
-                        textInputType: TextInputType.text,
-                        textEditingController: _searchController,
-                      ),
-                    ),
-
-                    //Empty space (for distance)
-                    const SizedBox(
-                      height: 24,
-                    ),
-
-                    //Empty space (for distance)
-                    const SizedBox(height: 0),
-
-                    //chat Button
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    child: Column(
                       children: [
-                        Container(
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all<CircleBorder>(
-                                    CircleBorder(
-                                        side: BorderSide(color: baseColor2))),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        baseColor2),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                    const EdgeInsets.all(14))),
-                            onPressed: () {},
-                            child: SvgPicture.asset(
-                                "assets/icons/person_logo.svg",
-                                height: 26,
-                                width: 20),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'Chats',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                fontFamily: baseFont1,
+                                color: baseColor3,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        ElevatedButton(
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        side: BorderSide(color: baseColor2))),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        baseColor2),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                    const EdgeInsets.symmetric(
-                                        vertical: 15, horizontal: 100))),
-                            onPressed: () {},
-                            child: Text(
-                              "Name",
+                        SizedBox(
+                            height: 30,
+                            child: TextFormField(
                               style: TextStyle(
                                   fontFamily: baseFont1,
-                                  color: baseColor3,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                      ],
-                    ),
-                    //Space kosong
-                    const SizedBox(
-                      height: 15,
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all<CircleBorder>(
-                                    CircleBorder(
-                                        side: BorderSide(color: baseColor2))),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        baseColor2),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                    const EdgeInsets.all(14))),
-                            onPressed: () {},
-                            child: SvgPicture.asset(
-                                "assets/icons/person_logo.svg",
-                                height: 26,
-                                width: 20),
-                          ),
-                        ),
-                        ElevatedButton(
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        side: BorderSide(color: baseColor2))),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        baseColor2),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                    const EdgeInsets.symmetric(
-                                        vertical: 15, horizontal: 100))),
-                            onPressed: () {},
-                            child: Text(
-                              "Name",
-                              style: TextStyle(
-                                  fontFamily: baseFont1,
-                                  color: baseColor3,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                      ],
-                    ),
-                    //Space kosong
-                    const SizedBox(
-                      height: 24,
-                    ),
-
-                    //Space pemisah antara bagian atas dengan bagian bawah biar lebih fit/padet
-                    const Expanded(child: SizedBox()),
-
-                    ////Bagian Bawah
-
-                    //Divider garis
-                    Row(
-                      children: <Widget>[
-                        //Divider kiri
-                        Expanded(
-                            child: Container(
-                          margin: const EdgeInsets.only(),
-                          child: Divider(
-                            color: baseColor1,
-                            height: 20,
-                            thickness: 2,
-                          ),
-                        )),
-                      ],
-                    ),
-
-                    //Icon-icon social media
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        //Icon Google
-                        Container(
-                            alignment: Alignment.center,
-                            height: 100,
-                            width: 50,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: SvgPicture.asset(
-                                  "assets/icons/search_logo.svg",
-                                  height: 50,
-                                  width: 15),
-                            )),
-
-                        Container(
-                            alignment: Alignment.center,
-                            height: 100,
-                            width: 100,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: SvgPicture.asset(
-                                  "assets/icons/chat_logo.svg",
-                                  height: 50,
-                                  width: 15),
-                            )),
-
-                        //Icon Fb
-                        Container(
-                            alignment: Alignment.center,
-                            height: 100,
-                            width: 50,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: SvgPicture.asset(
-                                "assets/icons/person_logo.svg",
-                                height: 65,
-                                width: 15,
+                                  color: Colors.white,
+                                  fontSize: 16),
+                              decoration: InputDecoration(
+                                contentPadding:
+                                    EdgeInsets.symmetric(horizontal: 10),
+                                filled: true,
+                                fillColor: baseColor1,
+                                focusColor: baseColor1,
+                                hoverColor: baseColor1,
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40)),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: baseColor1,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40)),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: baseColor1,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40)),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: baseColor1,
+                                  ),
+                                ),
+                                hintText: "Search",
+                                hintStyle: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                    fontFamily: baseFont1),
                               ),
+                              keyboardType: TextInputType.text,
                             )),
-
-                        //Icon apple
-                        Container(
-                          alignment: Alignment.center,
-                          height: 100,
-                          width: 90,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: SvgPicture.asset(
-                              "assets/icons/gear_logo.svg",
-                              height: 55,
-                              width: 15,
-                            ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Divider(
+                      color: baseColor1,
+                      thickness: 1,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ChatWindowScreen()));
+                    },
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 26,
+                          backgroundColor: baseColor2,
+                          child: SvgPicture.asset(
+                            "assets/icons/user_icon.svg",
+                            color: Colors.white,
+                            height: 40,
                           ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "Nama",
+                              style: TextStyle(
+                                  fontFamily: baseFont1,
+                                  color: baseColor3,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Messages",
+                              style: TextStyle(
+                                  fontFamily: baseFont1,
+                                  color: baseColor1,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                        const Expanded(child: SizedBox()),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Text(
+                            "Time",
+                            style: TextStyle(
+                                fontFamily: baseFont1, color: baseColor1),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
                         )
                       ],
                     ),
-                  ],
-                ),
-              )))),
+                  ),
+                  const Expanded(child: SizedBox()),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.fromLTRB(10, 10, 5, 10),
+                    height: 70,
+                    width: double.infinity,
+                    color: baseColor3,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        Stack(
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: baseColor3,
+                              radius: 24,
+                            ),
+                            Positioned(
+                                left: -4,
+                                top: -4,
+                                child: IconButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  FindFriendScreen()));
+                                    },
+                                    icon: Icon(
+                                      Icons.search_outlined,
+                                      color: Colors.white,
+                                      size: 40,
+                                    ))),
+                          ],
+                        ),
+                        const Flexible(
+                          child: SizedBox(),
+                          flex: 1,
+                          fit: FlexFit.tight,
+                        ),
+                        Stack(
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: baseColor2,
+                              radius: 24,
+                            ),
+                            Positioned(
+                                left: -4,
+                                top: 4,
+                                child: IconButton(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.message_outlined,
+                                      color: Colors.white,
+                                      size: 40,
+                                    ))),
+                          ],
+                        ),
+                        const Flexible(
+                          child: SizedBox(),
+                          flex: 1,
+                          fit: FlexFit.tight,
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ProfileScreen()));
+                            },
+                            iconSize: 40,
+                            icon: SvgPicture.asset("assets/icons/user_icon.svg",
+                                color: Colors.white, height: 40)),
+                        const Flexible(
+                          child: SizedBox(),
+                          flex: 1,
+                          fit: FlexFit.loose,
+                        ),
+                        IconButton(
+                            padding: EdgeInsets.symmetric(horizontal: 50),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SettingsScreen()));
+                            },
+                            icon: Icon(
+                              Icons.settings,
+                              color: Colors.white,
+                              size: 40,
+                            ))
+                      ],
+                    ),
+                  )
+                ],
+              ))),
     );
   }
 }

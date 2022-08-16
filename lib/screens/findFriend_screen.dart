@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/chat_list.dart';
+import 'package:milestone/screens/profile_screen.dart';
+import 'package:milestone/screens/settings_screen.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/widgets/text_field.dart';
@@ -172,7 +175,10 @@ class _FindFriendScreenState extends State<FindFriendScreen> {
                         //const SizedBox(width: 30),
                         IconButton(
                             padding: EdgeInsets.symmetric(horizontal: 70),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ChatListScreen()));
+                            },
                             icon: Icon(
                               Icons.message_outlined,
                               color: Colors.white,
@@ -182,14 +188,20 @@ class _FindFriendScreenState extends State<FindFriendScreen> {
                         //const SizedBox(width: 10),
 
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ProfileScreen()));
+                            },
                             iconSize: 40,
                             icon: SvgPicture.asset("assets/icons/user_icon.svg",
                                 color: Colors.white, height: 40)),
 
                         IconButton(
                             padding: EdgeInsets.symmetric(horizontal: 70),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SettingsScreen()));
+                            },
                             icon: Icon(
                               Icons.settings,
                               color: Colors.white,

@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:milestone/recources/auth.dart';
 import 'package:milestone/responsive/mobileScreenLayout.dart';
 import 'package:milestone/responsive/responsive_layouts.dart';
 import 'package:milestone/responsive/webScreenLayout.dart';
 import 'package:milestone/screens/HomeScreen.dart';
 import 'package:milestone/screens/Interest_screen.dart';
+import 'package:milestone/screens/IsiProfile_screen.dart';
 import 'package:milestone/screens/RegisterScreen.dart';
 import 'package:milestone/screens/settings_screen.dart';
 import 'package:milestone/screens/chatWindow_screen.dart';
@@ -13,10 +15,7 @@ import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/screens/findFriend_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/profile_screen.dart';
-
-import 'package:milestone/screens/test_screens/signup_test.dart';
 import 'package:milestone/utils/colors.dart';
-
 import 'screens/settings_screen.dart';
 
 void main() async {
@@ -59,7 +58,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return HomeScreen();
           } else {
-            return LoginScreen();
+            return HomeScreen();
           }
         },
       ),

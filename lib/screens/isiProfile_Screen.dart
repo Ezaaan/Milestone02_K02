@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/auth.dart';
 import 'package:milestone/screens/chat_list.dart';
+import 'package:milestone/screens/interest_screen.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
 import 'package:milestone/utils/utils.dart';
@@ -420,7 +421,10 @@ class _IsiProfileScreenState extends State<IsiProfileScreen> {
                     Container(
                       alignment: Alignment.bottomRight,
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => InterestScreen()));
+                          },
                           icon: Icon(
                             Icons.arrow_forward_ios_outlined,
                             color: Colors.white,

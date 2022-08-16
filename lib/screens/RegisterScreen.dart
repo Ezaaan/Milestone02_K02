@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/temp_auth.dart';
+import 'package:milestone/screens/IsiProfile_screen.dart';
 import 'package:milestone/screens/login_screen.dart';
 import 'package:milestone/screens/test_screens/isiprofile_test.dart';
 import 'package:milestone/utils/colors.dart';
@@ -204,7 +205,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   vertical: 15, horizontal: 100))),
                       onPressed: () async {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ProfileScreenTest()));
+                            builder: (context) => IsiProfileScreen()));
                         String res = await tempAuthFirebase().SignUp(
                           email: _emailController.text,
                           password: _passwordController.text,

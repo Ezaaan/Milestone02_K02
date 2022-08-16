@@ -2,8 +2,12 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:milestone/screens/chat_list.dart';
+import 'package:milestone/screens/findFriend_screen.dart';
+import 'package:milestone/screens/profile_screen.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
+import 'package:milestone/utils/prefs.dart';
 import 'package:milestone/widgets/text_field.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -17,6 +21,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _searchController = TextEditingController();
+  String? FullName;
+
   bool isForgotPressed = false;
   bool isSignupPressed = false;
 
@@ -26,6 +32,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _emailController.dispose();
     _passwordController.dispose();
     _searchController.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    myFullname();
+  }
+
+  Future<String?> myFullname() async {
+    FullName = await SharedPref().getFullName();
   }
 
   @override
@@ -58,7 +74,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   baseColor4,
                 ],
               )),
-              padding: const EdgeInsets.symmetric(horizontal: 32),
+              //padding: const EdgeInsets.symmetric(horizontal: 32),
               width: double.infinity,
               child: SingleChildScrollView(
                   child: Container(
@@ -69,6 +85,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        const SizedBox(
+                          width: 15,
+                        ),
                         Stack(
                           alignment: AlignmentDirectional.topEnd,
                           children: [
@@ -85,64 +104,57 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     icon: SvgPicture.asset(
                                       "assets/icons/user_icon.svg",
                                       color: Colors.white,
-                                      height: 40,
+                                      height: 60,
                                     ))),
                           ],
                         ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                        const SizedBox(
+                          width: 20,
+                        ),
                         Column(
-                          
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 50),
-                            child: Text(
-                                'Nama Lengkap',
-                                style: TextStyle(
-                                  fontFamily: baseFont1,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  height : 2,
-                                ),
-                              ),
+                            SizedBox(
+                              height: 10,
                             ),
-                            const Divider(
+                            Text(
+                              "Nama Lengkap",
+                              style: TextStyle(
+                                fontFamily: baseFont1,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                height: 20,
-                              ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 10),
-                             child: Text(
-                                'Username',
-                                style: TextStyle(
-                                  fontFamily: baseFont1,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ),
+                                fontSize: 18,
+                                //height: 2,
                               ),
                             ),
+                            Divider(
+                              color: Colors.white,
+                              thickness: 3,
+                              //height: 20,
+                            ),
+                            Text(
+                              'Username',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: baseFont1,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            )
                           ],
                         ),
-                        
                       ],
                     ),
-                    
-                      ],
-                    ),
-                  Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Divider(
-                                color: Colors.white,
-                                height: 20,
-                              ),
-                            ]),
-                        
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Divider(
+                            color: Colors.white,
+                            height: 20,
+                          ),
+                        ]),
+
                     //Space kosong
                     const SizedBox(height: 20),
 
@@ -358,34 +370,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           const SizedBox(
                             width: 50,
                           ),
-                          //const SizedBox(width: 30),
-                          IconButton(
-                              padding: EdgeInsets.symmetric(horizontal: 70),
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.search_outlined,
-                                color: Colors.white,
-                                size: 40,
-                              )),
-                          //
-                          //const SizedBox(width: 10),
-
-                          IconButton(
-                              onPressed: () {},
-                              iconSize: 40,
-                              icon: Icon(
-                                Icons.message_outlined,
-                                color: Colors.white,
-                                size: 40,
-                              )),
-
-                          IconButton(
-                              padding: EdgeInsets.symmetric(horizontal: 70),
-                              onPressed: () {},
-                              icon: SvgPicture.asset(
-                                  "assets/icons/user_icon.svg",
-                                  color: Colors.white,
-                                  height: 40)),
                           Stack(
                             children: [
                               CircleAvatar(
@@ -396,14 +380,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   left: -4,
                                   top: -4,
                                   child: IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    FindFriendScreen()));
+                                      },
                                       icon: Icon(
-                                        Icons.settings,
+                                        Icons.search_outlined,
                                         color: Colors.white,
                                         size: 40,
                                       ))),
                             ],
                           ),
+                          //const SizedBox(width: 30),
+                          IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 70),
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ChatListScreen()));
+                              },
+                              icon: Icon(
+                                Icons.message_outlined,
+                                color: Colors.white,
+                                size: 40,
+                              )),
+                          //
+                          //const SizedBox(width: 10),
+
+                          IconButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ProfileScreen()));
+                              },
+                              iconSize: 40,
+                              icon: SvgPicture.asset(
+                                  "assets/icons/user_icon.svg",
+                                  color: Colors.white,
+                                  height: 40)),
+
+                          IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 70),
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.settings,
+                                color: Colors.white,
+                                size: 40,
+                              ))
                         ],
                       ),
                     )
