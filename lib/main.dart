@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       // ),
 
       //Kalau mau ngerun dan liat hasil screen bisa diganti disini
-      home: SettingsScreen(),
+      home: HomeScreen(),
     );
   }
 }
