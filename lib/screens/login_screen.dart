@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:milestone/recources/auth.dart';
+import 'package:milestone/screens/RegisterScreen.dart';
 import 'package:milestone/screens/chat_list.dart';
 import 'package:milestone/utils/colors.dart';
 import 'package:milestone/utils/fonts.dart';
@@ -352,6 +353,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         GestureDetector(
                           onTapUp: ((details) {
                             setState(() => isSignupPressed = !isSignupPressed);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => RegisterScreen()));
                           }),
                           onTapDown: ((details) {
                             setState(() => isSignupPressed = !isSignupPressed);

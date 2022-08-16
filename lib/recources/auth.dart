@@ -7,6 +7,7 @@ import 'package:milestone/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:milestone/utils/prefs.dart';
+import 'package:milestone/recources/storage_methods.dart';
 
 class authFirebase {
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -46,20 +47,21 @@ class authFirebase {
     }
   }
 
-  Future<String> ProfileSignUp(
-      {required String email,
-      required String fullName,
-      required String phoneNum,
-      required String nickName,
-      required String gender,
-      required String age,
-      required String job,
-      required String city,
-      required String uid
+  Future<String> ProfileSignUp({
+    required String email,
+    required String fullName,
+    required String phoneNum,
+    required String nickName,
+    required String gender,
+    required String age,
+    required String job,
+    required String city,
+    required String uid,
+    required Uint8List file,
 
-      //required String bio,
-      //required Uint8List file,
-      }) async {
+    //required String bio,
+    //required Uint8List file,
+  }) async {
     String res = "An error occured";
     try {
       if (email.isNotEmpty ||
@@ -70,9 +72,13 @@ class authFirebase {
           age.isNotEmpty ||
           job.isNotEmpty ||
           city.isNotEmpty ||
-          uid.isNotEmpty) {
+          uid.isNotEmpty ||
+          file != null) {
         // UserCredential cred = await auth.createUserWithEmailAndPassword(
         //     email: email, password: password);
+
+        String photoUrl =
+            await StorageMethods().uploadImageToStorage('profilePics', file);
 
         model.User user = model.User(
             email: email,
@@ -83,7 +89,8 @@ class authFirebase {
             gender: gender,
             age: age,
             job: job,
-            city: city);
+            city: city,
+            photoUrl: photoUrl);
 
         await _firestore.collection('users').doc(uid).set(user.toJson());
         res = "success";

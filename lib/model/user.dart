@@ -10,6 +10,7 @@ class User {
   final String age;
   final String job;
   final String city;
+  final String photoUrl;
 
   const User(
       {required this.email,
@@ -20,7 +21,8 @@ class User {
       required this.gender,
       required this.age,
       required this.job,
-      required this.city});
+      required this.city,
+      required this.photoUrl});
 
   // static User fromSnap(DocumentSnapshot snap) {
   //   var snapshot = snap.data() as Map<String, dynamic>;
@@ -46,6 +48,7 @@ class User {
         "gender": gender,
         "age": age,
         "job": job,
-        "city": city
+        "city": city,
+        'photoUrl': photoUrl,
       };
 }

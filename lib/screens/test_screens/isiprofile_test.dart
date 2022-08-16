@@ -45,6 +45,7 @@ class _ProfileScreenTestState extends State<ProfileScreenTest> {
   @override
   void initState() {
     super.initState();
+
     //getEmail();
     //getPassword();
     //getPhone();
@@ -205,7 +206,11 @@ class _ProfileScreenTestState extends State<ProfileScreenTest> {
                     ),
 
                     //Space kosong
-                    const SizedBox(height: 64),
+                    const Flexible(
+                      child: SizedBox(),
+                      flex: 1,
+                      fit: FlexFit.tight,
+                    ),
 
                     //Username field
                     Container(
@@ -306,7 +311,8 @@ class _ProfileScreenTestState extends State<ProfileScreenTest> {
                                   age: _ageController.text,
                                   job: _jobController.text,
                                   city: _cityController.text,
-                                  uid: FirebaseAuth.instance.currentUser!.uid);
+                                  uid: FirebaseAuth.instance.currentUser!.uid,
+                                  file: _image!);
                               // var delete = await FirebaseFirestore.instance
                               //     .collection('tempUsers')
                               //     .doc(FirebaseAuth.instance.currentUser!.uid)
