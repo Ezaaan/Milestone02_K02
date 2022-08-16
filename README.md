@@ -1,15 +1,34 @@
+# APLIKASI PENCARI SAHABAT
 # Tugas Milestone Kelompok 2 (JUS)
-Membuat sebuah aplikasi pencari sahabat menggunakan Flutter dan Firebase.
 
-## Getting Started
+# Pembagian/Distribusi Tugas
 
-This project is a starting point for a Flutter application.
+(16521003)Amjad Adhie Prasetyo            - Frontend
 
-A few resources to get you started if this is your first Flutter project:
+(16521123) Edia Zaki Naufal Ilman          - Frontend & Backend
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+(16521175) Vanessa Rebecca Wiyono          - Frontend
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+(16521330) Ghaylan Muhammad Fatih          - Frontend
+
+(16521426) Fazel Ginanda                   - Frontend
+
+(16521473) Carissa Tabina Rianda           - Frontend
+
+(16521489) Kartini Copa                    - Frontend
+
+(16521540) Varraz Hazzandra Abrar          - Frontend
+
+(16521093) Natasya Vercelly Harijadi       - Backend
+
+(16521125) Gibran Fasha Ghazanfar          - Backend
+
+(16521139) Fakhri Putra Mahardika          - Backend
+
+(16521329) Mohammad Rifqi Farhansyah       - Backend
+
+(16521402) Jonathan Arthurito Aldi Sinaga  - Backend
+
+## Cara penggunaan
+
+....
