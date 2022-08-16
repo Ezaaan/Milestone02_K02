@@ -13,8 +13,8 @@ class authFirebase {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  getCurrentUser() {
-    return auth.currentUser;
+  getCurrentUser() async {
+    return await auth.currentUser;
   }
 
   signInWithGoogle(BuildContext context) async {
@@ -116,5 +116,9 @@ class authFirebase {
       res = err.toString();
     }
     return res;
+  }
+
+  Future<void> signOut() async {
+    await auth.signOut();
   }
 }
