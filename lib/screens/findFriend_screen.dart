@@ -64,71 +64,77 @@ class _FindFriendScreenState extends State<FindFriendScreen> {
                         const SizedBox(
                           height: 30,
                         ),
-                        Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                  color: baseColor1),
-                              height: 350,
-                              width: 350,
-                              child: SvgPicture.asset('assets/icons/avatar.svg',
-                                  height: 50, color: baseColor1),
-                            ),
-                            Positioned(
-                                bottom: -50,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.yellow.withOpacity(0.7),
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20))),
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 6, vertical: 10),
-                                  height: 150,
-                                  width: 350,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Nama Panggilan, Umur',
-                                        style: TextStyle(
+                        GestureDetector(
+                          onTap: () {},
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    color: baseColor1),
+                                height: 350,
+                                width: 350,
+                                child: SvgPicture.asset(
+                                    'assets/icons/avatar.svg',
+                                    height: 50,
+                                    color: baseColor1),
+                              ),
+                              Positioned(
+                                  bottom: -50,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.yellow.withOpacity(0.7),
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(20),
+                                            bottomRight: Radius.circular(20))),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 6, vertical: 10),
+                                    height: 150,
+                                    width: 350,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Nama Panggilan, Umur',
+                                          style: TextStyle(
+                                              fontFamily: baseFont1,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Bio',
+                                          style: TextStyle(
                                             fontFamily: baseFont1,
                                             color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      Text(
-                                        'Bio',
-                                        style: TextStyle(
-                                          fontFamily: baseFont1,
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                            fontSize: 15,
+                                          ),
+                                          textAlign: TextAlign.left,
                                         ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      Text(
-                                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh lacus, finibus quis interdum placerat, ullamcorper aliquam erat',
-                                        style: TextStyle(
-                                          fontFamily: baseFont1,
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                        Text(
+                                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh lacus, finibus quis interdum placerat, ullamcorper aliquam erat',
+                                          style: TextStyle(
+                                            fontFamily: baseFont1,
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                          ),
+                                          textAlign: TextAlign.left,
                                         ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ],
-                                  ),
-                                )),
-                          ],
-                        )
+                                      ],
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

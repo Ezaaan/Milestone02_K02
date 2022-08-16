@@ -206,7 +206,11 @@ class _ProfileScreenTestState extends State<ProfileScreenTest> {
                     ),
 
                     //Space kosong
-                    const SizedBox(height: 64),
+                    const Flexible(
+                      child: SizedBox(),
+                      flex: 1,
+                      fit: FlexFit.tight,
+                    ),
 
                     //Username field
                     Container(
