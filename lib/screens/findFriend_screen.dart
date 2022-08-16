@@ -88,7 +88,7 @@ class _FindFriendScreenState extends State<FindFriendScreen> {
                                         color: Colors.yellow.withOpacity(0.7),
                                         borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(20),
-                                            bottomRight: Radius.circular(20))),
+                                            bottomRight: Radius.circular(15))),
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 6, vertical: 10),
                                     height: 150,
